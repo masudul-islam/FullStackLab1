@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Lab 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <h1 class="banner">User Table</h1>
+    <h2 id="load"></h2>
+    <button class="add_user" onclick="userRegister()">Add User</button>
+    <div class="table_responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>UserID</th>
+              <th>Image</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="table-data">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="callout" id="callout">
+        <div class="callout-header" id="callout-header">Add User</div>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+        <div class="callout-container">
+            <input type="number" max="100" min="0" class="id display" id="userId" placeholder="ID" oninput="checkUserID()" />
+            <input type="text" class="name display" id="userN" placeholder="First Name" oninput="checkUserName()" />
+            <input type="text" class="lastName display" id="lastN" placeholder="Last Name" oninput="checkUserLastName()"/>
+            <input type="text" class="email display"  id="userEmail" placeholder="Email" oninput="checkInputEmail()"/>
+            <button style="background-color: #DFDFE2; color: black;" class="submit display"   type = "sumbit"  onclick="clickButton()" >Add</button>
+            <button style="background-color: #DFDFE2; color: black;" class="submit display"   type = "sumbit"  onclick="reloadButton()" >View Users</button>
+        </div>
+      </div>
+
+      <div class="callout2" id="callout2">
+        <div class="callout-header2" id="callout-header2">Update User Data</div>
+        <span class="closebtn2" onclick="this.parentElement.style.display='none';">×</span>
+        <div class="callout-container2">
+            <label >User ID</label>
+            <input type="text" class="id display2" id="userId2" readonly/>
+            <input type="text" class="name display2" id="userN2" placeholder="update Name" oninput="checkUserNameUpdate()" />
+            <input type="text" class="lastName display2" id="lastN2" placeholder="update Last Name" oninput="checkUserLastNameUpdate()"/>
+            <input type="text" class="email display2"  id="userEmail2" placeholder="update email" oninput="checkInputEmailUpdate()"/>
+            <button style="background-color: #c6c9c9;" class="submit display2"   type = "sumbit"  onclick="userUpdate()" >Update</button>
+            <button style="background-color: #c6c9c9;" class="submit display2"   type = "sumbit"  onclick="reloadButton()" >Reload</button>
+        </div>
+      </div>
+    <script  src="script.js"></script>   
+</body>
+</html>
