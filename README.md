@@ -1,0 +1,1 @@
+To run the web application enter this command npm start
